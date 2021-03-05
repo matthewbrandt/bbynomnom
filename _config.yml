@@ -1,0 +1,43 @@
+# Site settings
+title: BBYNOMNOM
+email: matthewbrandt@gmail.com
+description: Our recipe repository :)
+baseurl: ""
+language: "en"
+lang_direction: "ltr"
+color: "#83E3C5"
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title:output_ext
+
+collections:
+  components:
+    output: true
+  recipes:
+    output: true
+
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md', 'node_modules']
+
+translation:
+  en:
+    components: "Components"
+    ingredients: "Ingredients"
+    directions: "Directions"
+    category: "Category"
+    nutritional_information: "Nutritional Information"
+    component_based: 'This is a <strong class="blue">component-based recipe</strong>.'
+    search: "Search"
+    blog: "Blog"
+    subscribe: "Subscribe"
+  de:
+    components: "Komponenten"
+    ingredients: "Zutaten"
+    directions: "Zubereitung"
+    category: "Kategorie"
+    nutritional_information: "Nährwertangaben"
+    component_based: 'Dieses Rezept besteht aus <strong class="blue">mehreren Komponenten</strong>.'
+    search: "Suche"
+    blog: "Blog"
+    subscribe: "Abonnieren"

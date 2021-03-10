@@ -1,10 +1,10 @@
 version: "3"
 
 services:
-  bbynomnom:
+  recipescookeatch:
     image: jekyll/jekyll:latest
     restart: always
-    container_name: bbynomnom
+    container_name: recipescookeatch
     command: jekyll serve --force_polling --watch
     ports:
       - 4000:4000

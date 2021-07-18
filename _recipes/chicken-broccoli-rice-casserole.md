@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Chicken Broccoli Rice Casserole"
 image: chicken-broccoli-rice-casserole.jpg
-imagecredit: 
+imagecrediturl:
+imagecreditname:
 tags: maincourse, meat, weeknight
 
 ingredients:

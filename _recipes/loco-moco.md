@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Loco Moco"
 image: loco-moco.jpg
-imagecredit: 
+imagecrediturl:
+imagecreditname:
 tags: maincourse, meat, weeknight
 
 ingredients:

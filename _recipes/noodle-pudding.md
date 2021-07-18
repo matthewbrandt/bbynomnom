@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Noodle Pudding"
 image: noodle-pudding.jpg
-imagecredit:
+imagecrediturl:
+imagecreditname:
 tags: baking, dessert
 
 ingredients:

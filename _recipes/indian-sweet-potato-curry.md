@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Indian Sweet Potato Curry"
 image: indian-sweet-potato-curry.jpg
-imagecredit: https://www.hellofresh.ch/recipes/indisches-suskartoffel-curry-5c5089abc445fa73da672af3
+imagecrediturl: https://www.hellofresh.ch/recipes/indisches-suskartoffel-curry-5c5089abc445fa73da672af3
+imagecreditname: HelloFresh
 tags: vegan, maincourse, vegetarian, weeknight, lunch
 
 ingredients:

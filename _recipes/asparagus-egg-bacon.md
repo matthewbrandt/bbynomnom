@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Asparagus with Egg & Bacon"
 image: asparagus-egg-bacon.jpg
-imagecredit: 
+imagecrediturl:
+imagecreditname:
 tags: maincourse, meat, weeknight
 
 ingredients:

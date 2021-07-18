@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Mexican Style Sweet Potato"
 image: mexican-style-sweet-potato.jpg
-imagecredit:
+imagecrediturl:
+imagecreditname:
 tags: vegetarian, maincourse, weeknight
 
 ingredients:

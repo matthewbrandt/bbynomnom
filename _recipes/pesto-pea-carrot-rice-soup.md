@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Pesto Pea & Carrot Soup with Rice"
 image: pesto-pea-carrot-rice-soup.jpg
-imagecredit: 
+imagecrediturl:
+imagecreditname:
 tags: maincourse, vegetarian, weeknight
 
 ingredients:

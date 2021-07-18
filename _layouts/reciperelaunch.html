@@ -1,0 +1,88 @@
+---
+layout: relaunchpage
+---
+<div class="recipe-wrapper">
+	<div class="logo logo--details">
+		<img src="../assets/cookeat-logo.svg" alt="Das Logo von cookeat.ch">
+	</div>
+	<a class="button button--close" href="/">
+	<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect x="3.42676" y="-0.573242" width="42.4259" height="5.65679" rx="2.82839" transform="rotate(45 3.42676 -0.573242)" fill="#C4C4C4"/>
+		<rect x="-0.573242" y="29.4265" width="42.4259" height="5.65679" rx="2.82839" transform="rotate(-45 -0.573242 29.4265)" fill="#C4C4C4"/>
+	</svg>
+	</a>
+		<div class="recipe__header">
+			<img src="/images/{{ page.image }}" alt="Image of a ready made {{ page.title }}" />	
+		</div>
+		<div class="recipe__header-title">
+			<h1 class="headline headline--h2">{{ page.title }}</h1>
+			{% if page.imagecreditname %}
+			<p class="paragraph paragraph--mid">Fotonachweis: <a target="_blank" href="{{ page.imagecrediturl }}">{{ page.imagecreditname }}</a></p>
+			{% endif %}
+			{% if page.tags %}
+			<p class="paragraph paragraph--mid">Tags: 
+				{% for tag in page.tags %}
+					{{tag}} 
+				{% endfor %}
+			</p>
+			{% endif %}
+		</div>
+
+		<div class="recipe__content">
+			<div class="recipe__content-left">
+				<h2 class="headline headline--h3">
+					{% if page.persons > 1%}
+						Zutaten für {{ page.persons }} Personen
+						{% else %}
+						Zutaten für 2 Personen
+					{% endif %}
+				</h2>
+
+				<ul class="recipe__ingredients">
+					{% for ingredient in page.ingredients %}
+					<li class="recipe__ingredients--checkbox"><label for="ingredient">{{ ingredient }}</label></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="recipe__content-right">
+				<h2 class="headline headline--h3">Anleitung</h2>
+				<ul class="recipe__instructions">
+					{% for instruction in page.directions %}
+					<li>{{ instruction }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="recipe__footer">
+			<a class="recipe__footer--homelink" href="/">Zurück zur Rezeptliste</a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+  jQuery.fn.clickToggle = function(a,b) {
+  var ab=[b,a];
+  function cb(){ ab[this._tog^=1].call(this); }
+  return this.on("click", cb);
+  };
+
+  	$(".recipe__ingredients li").prepend('<input id="ingredient" class="recipe__ingredients--check" type="checkbox">');
+    $(".recipe__ingredients li").clickToggle(function(){
+    $(this).children("input").prop('checked', true);
+    var height = $(this).height();
+    var y = $(window).scrollTop();
+    $('html, body').animate({scrollTop: y+height+16}, 200);
+  }, function(){
+    $(this).children("input").prop('checked', false);
+    var height = $(this).height();
+    var y = $(window).scrollTop();
+    $('html, body').animate({scrollTop: y-height-16}, 200);
+  });
+
+  });
+
+</script>

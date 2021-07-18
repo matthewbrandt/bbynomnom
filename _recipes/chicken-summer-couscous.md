@@ -1,9 +1,10 @@
 ---
 
-layout: recipe
+layout: reciperelaunch
 title: "Summer Couscous with Chicken"
 image: chicken-summer-couscous.jpg
-imagecredit: 
+imagecrediturl:
+imagecreditname:
 tags: maincourse, meat, weeknight
 
 ingredients:

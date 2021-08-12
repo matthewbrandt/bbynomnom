@@ -1,4 +1,9 @@
+.DS_STORE
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+node_modules
+vendor
+package-lock.json

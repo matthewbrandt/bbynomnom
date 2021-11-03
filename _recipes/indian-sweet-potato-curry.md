@@ -1,7 +1,7 @@
 ---
 title: Indian Sweet Potato Curry
 excerpt:
-coverImage: indian-sweet-potato-curry.jpg
+coverImage: /images/indian-sweet-potato-curry.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl: https://www.hellofresh.ch/recipes/indisches-suskartoffel-curry-5c5089abc445fa73da672af3

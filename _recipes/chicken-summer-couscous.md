@@ -1,7 +1,7 @@
 ---
 title: Summer Couscous with Chicken
 excerpt:
-coverImage: chicken-summer-couscous.jpg
+coverImage: /images/chicken-summer-couscous.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

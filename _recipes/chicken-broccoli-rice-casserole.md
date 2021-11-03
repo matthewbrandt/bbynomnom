@@ -1,7 +1,7 @@
 ---
 title: Chicken Broccoli Rice Casserole
 excerpt:
-coverImage: chicken-broccoli-rice-casserole.jpg
+coverImage: /images/chicken-broccoli-rice-casserole.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

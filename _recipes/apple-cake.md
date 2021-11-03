@@ -1,7 +1,7 @@
 ---
 title: Apple Cake
 excerpt:
-coverImage: apple-cake.jpg
+coverImage: /images/apple-cake.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

@@ -1,7 +1,7 @@
 ---
 title: Vegan Pad Thai
 excerpt:
-coverImage: vegan-pad-thai.jpg
+coverImage: /images/vegan-pad-thai.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

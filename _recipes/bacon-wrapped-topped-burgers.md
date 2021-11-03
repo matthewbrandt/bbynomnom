@@ -1,7 +1,7 @@
 ---
 title: Bacon-Wrapped & Topped Burgers
 excerpt:
-coverImage: bacon-wrapped-topped-burgers.jpg
+coverImage: /images/bacon-wrapped-topped-burgers.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

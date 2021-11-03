@@ -1,7 +1,7 @@
 ---
 title: Asparagus with Egg & Bacon
 excerpt:
-coverImage: asparagus-egg-bacon.jpg
+coverImage: /images/asparagus-egg-bacon.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

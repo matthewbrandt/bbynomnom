@@ -1,7 +1,7 @@
 ---
 title: Älpler Onepot
 excerpt: A small excerpt.
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
+coverImage: /images/alpler-one-pot.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl:

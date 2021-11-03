@@ -1,7 +1,7 @@
 ---
 title: Sweet Potato with Bacon & Cheese
 excerpt:
-coverImage: sweet-potato-bacon-cheese.jpg
+coverImage: /images/sweet-potato-bacon-cheese.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

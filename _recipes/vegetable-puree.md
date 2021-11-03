@@ -1,7 +1,7 @@
 ---
 title: Vegetable Purée
 excerpt:
-coverImage: vegetable-puree.jpg
+coverImage: /images/vegetable-puree.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl: https://www.annabelkarmel.com/recipes/carrots-broccoli-cheese-puree/

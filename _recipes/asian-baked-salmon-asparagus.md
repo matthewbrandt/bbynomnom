@@ -1,7 +1,7 @@
 ---
 title: Asian Baked Salmon with Asparagus
 excerpt:
-coverImage: asian-baked-salmon-asparagus.jpg
+coverImage: /images/asian-baked-salmon-asparagus.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

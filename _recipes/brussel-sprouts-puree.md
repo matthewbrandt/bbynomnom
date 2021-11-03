@@ -1,7 +1,7 @@
 ---
 title: Brussel Sprouts Purée
 excerpt:
-coverImage: brussel-sprouts-puree.jpg
+coverImage: /images/brussel-sprouts-puree.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl: https://sweetsoursavory.com/blog/2013/9/9/brussel-sprouts-pure

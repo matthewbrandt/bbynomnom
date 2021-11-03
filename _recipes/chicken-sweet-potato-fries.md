@@ -1,7 +1,7 @@
 ---
 title: Chicken & Sweet Potato Fries
 excerpt:
-coverImage: chicken-sweet-potato-fries.jpg
+coverImage: /images/chicken-sweet-potato-fries.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

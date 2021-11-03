@@ -1,7 +1,7 @@
 ---
 title: Avocado Salmon Toast
 excerpt:
-coverImage: avocado-salmon-toast.jpg
+coverImage: /images/avocado-salmon-toast.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

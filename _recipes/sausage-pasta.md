@@ -1,7 +1,7 @@
 ---
 title: Sausage Pasta with Spinach in Tomato Sauce
 excerpt:
-coverImage: sausage-pasta.jpg
+coverImage: /images/sausage-pasta.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

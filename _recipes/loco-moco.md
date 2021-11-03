@@ -1,7 +1,7 @@
 ---
 title: Loco Moco
 excerpt:
-coverImage: loco-moco.jpg
+coverImage: /images/loco-moco.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

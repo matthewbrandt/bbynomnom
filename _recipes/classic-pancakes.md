@@ -1,7 +1,7 @@
 ---
 title: Classic Pancakes
 excerpt:
-coverImage: classic-pancakes.jpg
+coverImage: /images/classic-pancakes.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

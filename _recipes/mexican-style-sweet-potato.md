@@ -1,7 +1,7 @@
 ---
 title: Mexican Style Sweet Potato
 excerpt:
-coverImage: mexican-style-sweet-potato.jpg
+coverImage: /images/mexican-style-sweet-potato.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

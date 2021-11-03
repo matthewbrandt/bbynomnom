@@ -1,7 +1,7 @@
 ---
 title: German Potato Salad
 excerpt:
-coverImage: german-potato-salad.jpg
+coverImage: /images/german-potato-salad.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

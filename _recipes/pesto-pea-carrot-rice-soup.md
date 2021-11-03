@@ -1,7 +1,7 @@
 ---
 title: Pesto Pea & Carrot Soup with Rice
 excerpt:
-coverImage: pesto-pea-carrot-rice-soup.jpg
+coverImage: /images/pesto-pea-carrot-rice-soup.jpg
 date: '2021-11-02'
 ogImage:
 imageCreditUrl:

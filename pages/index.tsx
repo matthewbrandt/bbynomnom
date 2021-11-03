@@ -3,10 +3,13 @@ import { getAllRecipes } from "../lib/api";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import styles from "../styles/Index.module.css";
+import Search from "../components/Search";
 import RecipeCard from "../components/RecipeCard";
+import styles from "../styles/Index.module.css";
 
 export default function Index({ allRecipes }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+	const recipe = allRecipes.map((item: any) => { return item; })
 	return (
 		<>
 			<Head>
@@ -17,26 +20,29 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 					href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
 					rel="stylesheet" />
 			</Head>
-			<main className={styles.main}>
+			<div className={styles.layout}>
 				<Header />
-				{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }) => (
-					<RecipeCard
-						title={recipe.title}
-						excerpt={recipe.excerpt}
-						coverImage={recipe.coverImage}
-						date={recipe.date}
-						ogImage={recipe.ogImage}
-						imageCreditUrl={recipe.imageCreditUrl}
-						imageCreditName={recipe.imageCreditName}
-						tags={recipe.tags}
-						persons={recipe.persons}
-						ingredients={recipe.ingredients}
-						directions={recipe.directions}
-						slug={recipe.slug}
-					/>
-				))}
+				<Search/>
+				<main className={styles.main} key={recipe.slug}>
+					{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }) => (
+						<RecipeCard
+							title={recipe.title}
+							excerpt={recipe.excerpt}
+							coverImage={recipe.coverImage}
+							date={recipe.date}
+							ogImage={recipe.ogImage}
+							imageCreditUrl={recipe.imageCreditUrl}
+							imageCreditName={recipe.imageCreditName}
+							tags={recipe.tags}
+							persons={recipe.persons}
+							ingredients={recipe.ingredients}
+							directions={recipe.directions}
+							slug={recipe.slug}
+						/>
+					))}
+				</main>
 				<Footer/>
-			</main>
+			</div>
 		</>
 	)
 }

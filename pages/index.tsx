@@ -21,12 +21,16 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 					rel="stylesheet" />
 			</Head>
 			<div className={styles.layout}>
-				<Header />
+				<Header
+					isDetailpage={false}
+					isFullWidth={false}
+					coverImage={""} />
 				<Search/>
 				<main className={styles.main} key={recipe.slug}>
 					<div className={styles.recipeCard}>
-						{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }) => (
+						{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }, index: number) => (
 							<RecipeCard
+								key={index}
 								title={recipe.title}
 								excerpt={recipe.excerpt}
 								coverImage={recipe.coverImage}
@@ -43,7 +47,9 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 						))}
 					</div>
 				</main>
-				<Footer/>
+				<Footer
+					isDetailpage={false}
+					isFullWidth={false} />
 			</div>
 		</>
 	)

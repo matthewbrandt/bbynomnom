@@ -3,8 +3,22 @@ import Image from "next/image";
 import styles from "../styles/RecipeCard.module.css";
 import React from "react";
 
-// @ts-ignore
-export default function RecipeCard({title, excerpt, coverImage, date, ogImage, imageCreditUrl, imageCreditName, tags, persons, ingredients, directions, slug }) {
+type RecipeCard = {
+	title: string;
+	excerpt: string;
+	coverImage: string;
+	date: string;
+	ogImage: string;
+	imageCreditUrl: string;
+	imageCreditName: string;
+	tags: [];
+	persons: number;
+	ingredients: [];
+	directions: [];
+	slug: string;
+}
+
+export default function RecipeCard({title, excerpt, coverImage, date, ogImage, imageCreditUrl, imageCreditName, tags, persons, ingredients, directions, slug }: RecipeCard) {
 	// @ts-ignore
 	const RecipeCardInner = React.forwardRef(({ onClick, href }, ref) => {
 		return (
@@ -15,7 +29,7 @@ export default function RecipeCard({title, excerpt, coverImage, date, ogImage, i
 				<p className={styles.recipeCard__title}>{title}</p>
 			</a>
 		)
-	})
+	});
 
 	return (
 		<>

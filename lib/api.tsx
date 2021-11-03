@@ -30,5 +30,5 @@ export function getAllRecipes(fields: any[] = []) {
 	const slugs = getRecipeSlugs();
 	return slugs
 		.map((slug) => getRecipeBySlug(slug, fields))
-		.sort((recipe1, recipe2) => (recipe1.date > recipe2.date ? -1 : 1));
+		.sort((recipe1, recipe2) => { return String(recipe1).localeCompare(String(recipe2), 'de')});
 }

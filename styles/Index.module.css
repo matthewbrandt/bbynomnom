@@ -8,3 +8,9 @@
 .main {
 	padding: 40px;
 }
+
+.recipeCard {
+	display: flex;
+	flex-flow: row wrap;
+
+}

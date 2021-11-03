@@ -1,0 +1,19 @@
+.recipeCard {
+	margin: 16px;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.recipeCard__link {
+	text-decoration: none;
+}
+
+.recipeCard__image {
+	margin-bottom: 12px;
+}
+
+.recipeCard__title {
+	font-size: 1.125rem;
+	color: var(--grey);
+	text-decoration: none;
+}

@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { getRecipeBySlug, getAllRecipes } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
-export default function Recipe({ recipe }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Recipe({ recipe = null }: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
 	if(!router.isFallback && !recipe?.slug) {
 		return <ErrorPage statusCode={404} />
@@ -53,6 +53,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 				},
 			}
 		}),
-		fallback: true,
+		fallback: false,
 	}
 }

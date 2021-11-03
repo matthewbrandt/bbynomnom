@@ -24,22 +24,24 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 				<Header />
 				<Search/>
 				<main className={styles.main} key={recipe.slug}>
-					{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }) => (
-						<RecipeCard
-							title={recipe.title}
-							excerpt={recipe.excerpt}
-							coverImage={recipe.coverImage}
-							date={recipe.date}
-							ogImage={recipe.ogImage}
-							imageCreditUrl={recipe.imageCreditUrl}
-							imageCreditName={recipe.imageCreditName}
-							tags={recipe.tags}
-							persons={recipe.persons}
-							ingredients={recipe.ingredients}
-							directions={recipe.directions}
-							slug={recipe.slug}
-						/>
-					))}
+					<div className={styles.recipeCard}>
+						{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }) => (
+							<RecipeCard
+								title={recipe.title}
+								excerpt={recipe.excerpt}
+								coverImage={recipe.coverImage}
+								date={recipe.date}
+								ogImage={recipe.ogImage}
+								imageCreditUrl={recipe.imageCreditUrl}
+								imageCreditName={recipe.imageCreditName}
+								tags={recipe.tags}
+								persons={recipe.persons}
+								ingredients={recipe.ingredients}
+								directions={recipe.directions}
+								slug={recipe.slug}
+							/>
+						))}
+					</div>
 				</main>
 				<Footer/>
 			</div>

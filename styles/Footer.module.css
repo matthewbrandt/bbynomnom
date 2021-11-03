@@ -1,0 +1,63 @@
+.footer {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.footer__pre {
+	height: 410px;
+	background: url("../public/assets/kv_egg-asparagus.jpg");
+	background-size: cover;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.footer__preLeft {
+	max-width: 645px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin-left: 141px;
+}
+
+.footer__preLeft p {
+	color: var(--white);
+}
+
+.footer__preLeftHeader {
+	font-family: "Debby", sans-serif;
+	color: var(--white);
+	font-size: 5rem;
+}
+
+.footer__preLeftText {
+	font-size: 1.5rem;
+	line-height: 2.25rem;
+	margin-bottom: 28px;
+}
+
+.footer__preLeftCtaButton {
+
+}
+
+.footer__preRight {
+	background: url("../public/assets/cookeat-logo.svg");
+	background-size: cover;
+	width: 120px;
+	height: 86px;
+	justify-self: flex-end;
+	align-self: flex-end;
+	margin: 28px 60px;
+}
+
+.footer__legal {
+	background: var(--brownish-grey);
+	padding: 10px 60px;
+}
+
+.footer__legal p {
+	font-weight: 700;
+	font-size: 0.87rem;
+	line-height: 2rem;
+}

@@ -1,0 +1,36 @@
+.header {
+	background: url("../public/assets/kv_egg.jpg");
+	background-size: cover;
+	max-width: 1440px;
+	height: 385px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.header__logo {
+	background: url("../public/assets/cookeat-logo.svg");
+	background-size: cover;
+	width: 120px;
+	height: 86px;
+	justify-self: flex-start;
+	align-self: flex-start;
+	margin: 48px 60px;
+}
+
+.header__title {
+	max-width: 863px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.header__title h1 {
+	color: var(--white);
+}
+
+.header__title p {
+	color: var(--white);
+	font-size: 2.25rem;
+}

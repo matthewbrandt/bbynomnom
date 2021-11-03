@@ -1,0 +1,51 @@
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--green: #bcc657;
+	--orange: #eeb92b;
+	--blue: #78a7b4;
+	--grey: #45423b;
+	--brownish-grey: #d6cdbe;
+	--light-grey: #e6dede;
+	--off-white: #f2efef;
+
+	--background: #e5e5e5;
+	--text: var(--grey);
+	--footer: var(--brownish-grey);
+	--legal: var(--brownish-grey);
+}
+
+@font-face {
+	font-family: "Debby";
+	src: url("../public/fonts/Debby.ttf") format("truetype");
+}
+
+html,
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 100%;
+}
+
+a {
+	color: var(--green);
+	text-decoration: underline;
+	text-decoration-skip: auto;
+	text-decoration-skip-ink: auto;
+	text-decoration-thickness: from-font;
+}
+
+a:hover {
+	color: var(--blue);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}

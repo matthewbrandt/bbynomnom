@@ -20,11 +20,12 @@ type RecipeCard = {
 
 export default function RecipeCard({title, excerpt, coverImage, date, ogImage, imageCreditUrl, imageCreditName, tags, persons, ingredients, directions, slug }: RecipeCard) {
 	// @ts-ignore
+	// eslint-disable-next-line react/display-name
 	const RecipeCardInner = React.forwardRef(({ onClick, href }, ref) => {
 		return (
 			<a className={styles.recipeCard__link} href={href} onClick={onClick}>
 				<div className={styles.recipeCard__image}>
-					{coverImage !== '' ? <Image src={coverImage} width="420" height="227" layout="responsive" /> : ''}
+					{coverImage ? <Image src={coverImage} width="420" height="227" /> : ''}
 				</div>
 				<p className={styles.recipeCard__title}>{title}</p>
 			</a>
@@ -33,7 +34,7 @@ export default function RecipeCard({title, excerpt, coverImage, date, ogImage, i
 
 	return (
 		<>
-		<section className={styles.recipeCard}>
+		<section className={styles.recipeCard} data-tags={tags} data-title={title}>
 			<Link as={`/recipes/${slug}`} href="/recipes/[slug]" passHref>
 				<RecipeCardInner />
 			</Link>

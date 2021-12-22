@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from "../styles/Footer.module.css";
 
 type Footer = {
@@ -33,7 +34,9 @@ export default function Footer({isDetailpage, isFullWidth}: Footer) {
 					<footer className={styles.footer__fullWidth}>
 						<div className={styles.footer__detailPage}>
 							<a href="https://www.cookeat.ch" className="btn btn--green">Auf CookEat anbieten</a>
-							<a href="/" className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
+							<Link href="/">
+								<a className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
+							</Link>
 						</div>
 						<div className={styles.footer__legal}>
 							<p>&copy; 2021 All rights reserved by Cook Eat</p>
@@ -43,7 +46,9 @@ export default function Footer({isDetailpage, isFullWidth}: Footer) {
 					<footer className={styles.footer}>
 						<div className={styles.footer__detailPage}>
 							<a href="https://www.cookeat.ch" className="btn btn--green">Auf CookEat anbieten</a>
-							<a href="/" className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
+							<Link href="/">
+								<a className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
+							</Link>
 						</div>
 						<div className={styles.footer__legal}>
 							<p>&copy; 2021 All rights reserved by Cook Eat</p>

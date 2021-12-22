@@ -11,6 +11,7 @@ type Header = {
 
 export default function Header({isDetailpage, isFullWidth, coverImage}: Header) {
 	// @ts-ignore
+	// eslint-disable-next-line react/display-name
 	const CloseButtonInner = React.forwardRef(({ onClick, href }, ref) => {
 		return (
 			<a href={href} onClick={onClick}>
@@ -42,20 +43,20 @@ export default function Header({isDetailpage, isFullWidth, coverImage}: Header) 
 				{isFullWidth ?
 					<header className={styles.header__detailPageFullWidth}>
 						<div className={styles.header__detailPageImageFullWidth}>
-							<Image src={coverImage} layout="fill"/>
+							<Image src={coverImage} layout="fill" alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
-						<Link href="/">
+						<Link href="/" passHref>
 							<CloseButtonInner/>
 						</Link>
 					</header>
 					:
 					<header className={styles.header__detailPage}>
 						<div className={styles.header__detailPageImage}>
-							<Image src={coverImage} layout="fill"/>
+							<Image src={coverImage} layout="fill" alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
-						<Link href="/">
+						<Link href="/" passHref>
 							<CloseButtonInner/>
 						</Link>
 					</header>

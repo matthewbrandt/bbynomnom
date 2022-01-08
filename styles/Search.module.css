@@ -11,7 +11,7 @@
 .search__input {
 	background: transparent;
 	border: none;
-	font-size: 1.5rem;
+	font-size: clamp(1rem, 2.5vw, 2rem);
 	line-height: 2rem;
 	font-weight: 400;
 	width: 100%;

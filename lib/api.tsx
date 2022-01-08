@@ -1,34 +1,62 @@
-import fs from "fs";
-import {join} from "path";
-import matter from "gray-matter";
-
-const recipesDirectory = join(process.cwd(), '_recipes');
-
-export function getRecipeSlugs() {
-	return fs.readdirSync(recipesDirectory);
-}
-
-export function getRecipeBySlug(slug: string | string[] | undefined, fields: any[] = []) {
-	if (typeof slug === "string") {
-		const realSlug = slug.replace(/\.md$/, '');
-		const fullPath = join(recipesDirectory, `${realSlug}.md`);
-		const fileContents = fs.readFileSync(fullPath, 'utf-8');
-		const { data, content } = matter(fileContents);
-		const items: any = {};
-
-		fields.forEach((field) => {
-			(field === "slug") ? items[field] = realSlug : '';
-			(field === "content") ? items[field] = content : '';
-			(typeof data[field] !== "undefined") ? items[field] = data[field] : '';
-		});
-		return items;
+export default class CTFLData {
+	static async getPages(slug: string) {
+		const query = `{
+			recipeCollection {
+				items {
+						sys {
+							id
+						}
+						title
+						slug
+						tagsCollection {
+							items {
+								... on Tags {
+									sys {
+										id
+									}
+									tag 
+									slug
+								}
+							}
+						}
+						excerpt
+						image {
+							url
+							width
+							height
+						}
+						imageCreditName
+						imageCreditUrl
+						persons
+						ingredients
+						directions
+						description
+					}
+				} 
+			}`;
+		console.log(query);
+		const content = await CTFLData.callApi(query);
+		return content.recipeCollection.items;
 	}
-	return;
-}
 
-export function getAllRecipes(fields: any[] = []) {
-	const slugs = getRecipeSlugs();
-	return slugs
-		.map((slug) => getRecipeBySlug(slug, fields))
-		.sort((recipe1, recipe2) => { return String(recipe1).localeCompare(String(recipe2), 'de')});
+	static async callApi(query: any) {
+		try {
+			const response = await fetch(
+				`https://graphql.contentful.com/content/v1/spaces/${process.env.CTFL_SPACE_ID}/environments/master`,
+				{
+					method: "POST",
+					headers: {
+						Authorization: `Bearer ${process.env.CTFL_DELIVERY_KEY}`,
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ query }),
+				},
+			).then((response) => {
+				return response.json();
+			});
+			return response.data;
+		} catch (error) {
+			console.log(error);
+		}
+	}
 }

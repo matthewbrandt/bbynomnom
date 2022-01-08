@@ -1,13 +1,19 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { getRecipeBySlug, getAllRecipes } from "../../lib/api";
-import markdownToHtml from "../../lib/markdownToHtml";
+import {
+	GetStaticPaths,
+	GetStaticProps,
+	GetStaticPropsContext,
+	InferGetStaticPropsType,
+	PreviewData
+} from "next";
+import CTFLData from "../../lib/api";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import RecipeDetail from "../../components/RecipeDetail";
 import styles from "../../styles/Index.module.css";
+import {ParsedUrlQuery} from "querystring";
 
 export default function Recipe({ recipe = null }: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
@@ -44,37 +50,27 @@ export default function Recipe({ recipe = null }: InferGetStaticPropsType<typeof
 	)
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const recipe = getRecipeBySlug(params?.slug, [
-		'title',
-		'excerpt',
-		'coverImage',
-		'date',
-		'ogImage',
-		'imageCreditUrl',
-		'imageCreditName',
-		'tags',
-		'persons',
-		'ingredients',
-		'directions',
-		'slug'
-	]);
-	const content = await markdownToHtml(recipe.content || '');
+interface IParams extends ParsedUrlQuery {
+	slug: string | undefined;
+}
+
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>) => {
+	const { page } = context.params! as IParams;
+	const recipes = await CTFLData.getPages(`${page}`);
 
 	return {
 		props: {
-			recipe: {
-				...recipe,
-				content,
-			},
+			recipes, page
 		},
-	}
+		revalidate: 1,
+	};
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const recipes = getAllRecipes(["slug"]);
+	const recipes = await CTFLData.getPages("");
+
 	return {
-		paths: recipes.map((recipe) => {
+		paths: recipes.map((recipe: { slug: any; }) => {
 			return {
 				params: {
 					slug: recipe.slug,

@@ -1,19 +1,19 @@
 import Head from "next/head";
-import { getAllRecipes } from "../lib/api";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import CTFLData from "../lib/api";
+import {GetStaticPaths, GetStaticPathsContext, GetStaticProps, InferGetStaticPropsType} from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
 import RecipeCard from "../components/RecipeCard";
 import styles from "../styles/Index.module.css";
 
-export default function Index({ allRecipes }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Index({ recipes }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-	const recipe = allRecipes.map((item: any) => { return item; })
+	const recipe = recipes.map((item: any) => { return item; })
 	return (
 		<>
 			<Head>
-				<title>cookEat.ch</title>
+				<title>Cook Eat Rezepte</title>
 
 			</Head>
 			<div className={styles.layout}>
@@ -24,23 +24,26 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 				<Search/>
 				<main className={styles.main} key={recipe.slug}>
 					<div className={styles.recipeCard}>
-						{allRecipes.map((recipe: { title: string; excerpt: string; coverImage: string; date: string; ogImage: string; imageCreditUrl: string; imageCreditName: string; tags: []; persons: number; ingredients: []; directions: []; slug: string; }, index: number) => (
-							<RecipeCard
-								key={index}
-								title={recipe.title}
-								excerpt={recipe.excerpt}
-								coverImage={recipe.coverImage}
-								date={recipe.date}
-								ogImage={recipe.ogImage}
-								imageCreditUrl={recipe.imageCreditUrl}
-								imageCreditName={recipe.imageCreditName}
-								tags={recipe.tags}
-								persons={recipe.persons}
-								ingredients={recipe.ingredients}
-								directions={recipe.directions}
-								slug={recipe.slug}
-							/>
-						))}
+						{recipe.map((item: any, index: number) => {
+							console.log(item);
+							return (
+								<>
+									<RecipeCard
+										key={index}
+										title={item.title}
+										excerpt={item.excerpt}
+										tags={item.tagsCollection}
+										image={item.image.url}
+										imageCreditUrl={item.imageCreditUrl}
+										imageCreditName={item.imageCreditName}
+										persons={item.persons}
+										ingredients={item.ingredients}
+										directions={item.directions}
+										slug={item.slug}
+									/>
+								</>
+							)
+						})}
 					</div>
 				</main>
 				<Footer
@@ -51,23 +54,13 @@ export default function Index({ allRecipes }: InferGetStaticPropsType<typeof get
 	)
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-	const allRecipes = getAllRecipes([
-		'title',
-		'excerpt',
-		'coverImage',
-		'date',
-		'ogImage',
-		'imageCreditUrl',
-		'imageCreditName',
-		'tags',
-		'persons',
-		'ingredients',
-		'directions',
-		'slug'
-	]);
+export const getStaticProps: GetStaticProps = async (slug) => {
+	const recipes = await CTFLData.getPages("/home");
 
 	return {
-		props: { allRecipes },
-	}
+		props: {
+			recipes
+		},
+		revalidate: 1,
+	};
 }

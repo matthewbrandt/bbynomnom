@@ -1,7 +1,7 @@
 ---
 title: Mediterranisches Quinoa Salat
 excerpt: A small excerpt.
-coverImage: /images/mediterranisches-quinao-salad.jpg
+coverImage: /images/mediterranisches-quinoa-salat.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl: http://laurencariscooks.com/mediterranean-quinoa-salad/

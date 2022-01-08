@@ -1,7 +1,7 @@
 ---
 title: Asiatischer Ofenlachs mit Spargel
 excerpt: A small excerpt.
-coverImage: /images/asiatischer-ofenlachst-mit-spargel.jpg
+coverImage: /images/asiatischer-ofenlachs-mit-spargel.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl:

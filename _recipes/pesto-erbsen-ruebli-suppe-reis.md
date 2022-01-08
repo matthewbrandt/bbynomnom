@@ -1,7 +1,7 @@
 ---
 title: Pesto Erbsen & Rüebli Suppe mit Reis
 excerpt: A small excerpt.
-coverImage: /images/pesto-erbsel-ruebli-suppe-reis.jpg
+coverImage: /images/pesto-erbsen-ruebli-suppe-reis.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl: https://www.instagram.com/matty_twoshoes/

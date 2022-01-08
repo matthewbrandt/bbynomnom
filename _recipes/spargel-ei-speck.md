@@ -1,7 +1,7 @@
 ---
 title: Spargel mit Ei & Speck
 excerpt: A small excerpt.
-coverImage: /images/spargel-mit-ei-speck.jpg
+coverImage: /images/spargel-ei-speck.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl: 

@@ -1,7 +1,7 @@
 ---
 title: Sommer Couscous mit Poulet
 excerpt: A small excerpt.
-coverImage: /images/sommer-couscous-mit-poulet.jpg
+coverImage: /images/sommer-couscous-poulet.jpg
 date: '2021-08-12'
 ogImage:
 imageCreditUrl: https://www.instagram.com/matty_twoshoes/

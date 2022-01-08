@@ -36,6 +36,13 @@
 	margin: 75px 0;
 }
 
+.recipeDetail__ingredientsItem input[type="checkbox"]:checked + label,
+.recipeDetail__directionsItem input[type="checkbox"]:checked + label {
+	color: var(--grey);
+	text-decoration: line-through;
+	text-decoration-color: var(--grey);
+}
+
 @media only screen and (min-width: 768px) {
 	.recipeDetail__recipe {
 		display: flex;

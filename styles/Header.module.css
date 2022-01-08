@@ -24,6 +24,7 @@
 	flex-flow: column wrap;
 	justify-content: space-evenly;
 	align-items: center;
+	padding: 0 1rem;
 }
 
 .header__title h1 {
@@ -32,7 +33,7 @@
 
 .header__title p {
 	color: var(--white);
-	font-size: 2.25rem;
+	font-size: clamp(1rem, 1vw, 3rem);
 }
 
 .header__detailPage {
@@ -99,4 +100,10 @@
 	height: 25vh;
 	max-width: 100vw;
 	max-height: 50vh;
+}
+
+@media only screen and (max-width: 768px) {
+	.header__detailPageClose {
+		margin: 56px 30px;
+	}
 }

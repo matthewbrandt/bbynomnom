@@ -19,8 +19,8 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 		if(!event.current) return;
 		event.current.scrollIntoView({
 			behavior: 'smooth',
-			block: 'end',
-			inline: 'nearest'
+			block: 'start',
+			inline: 'start'
 		})
 	};
 

@@ -1,5 +1,44 @@
 export default class CTFLData {
-	static async getPages(slug: string) {
+	static async getRecipeBySlug(slug: string) {
+		const query = `{
+			recipeCollection(where: { slug: "${slug}"}, limit: 1) {
+				items {
+						sys {
+							id
+						}
+						title
+						slug
+						tagsCollection {
+							items {
+								... on Tags {
+									sys {
+										id
+									}
+									tag 
+									slug
+								}
+							}
+						}
+						excerpt
+						image {
+							url
+							width
+							height
+						}
+						imageCreditName
+						imageCreditUrl
+						persons
+						ingredients
+						directions
+						description
+					}
+				} 
+			}`;
+		const content = await CTFLData.callApi(query);
+		return content.recipeCollection.items;
+	}
+
+	static async getAllRecipes() {
 		const query = `{
 			recipeCollection {
 				items {

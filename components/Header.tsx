@@ -7,7 +7,7 @@ type Header = {
 	isDetailpage: boolean;
 	isFullWidth: boolean;
 	image: {
-		url: string
+		url: string;
 	};
 }
 
@@ -23,7 +23,6 @@ export default function Header({isDetailpage, isFullWidth, image}: Header) {
 			</a>
 		)
 	});
-
 
 	const renderIndexHeader = () => {
 		return (

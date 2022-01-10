@@ -10,6 +10,7 @@ import styles from "../styles/Index.module.css";
 export default function Index({ recipes }: InferGetStaticPropsType<typeof getStaticProps>) {
 
 	const recipe = recipes.map((item: any) => { return item; })
+
 	return (
 		<>
 			<Head>
@@ -19,13 +20,12 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 			<div className={styles.layout}>
 				<Header
 					isDetailpage={false}
-					isFullWidth={false}
-					coverImage={""} />
+					isFullWidth={true}
+					image={""}/>
 				<Search/>
-				<main className={styles.main}>
-					<div className={styles.recipeCard} key={recipe.slug}>
+				<main className={styles.main} key={recipes.slug}>
+					<div className={styles.recipeCard}>
 						{recipe.map((item: any, index: number) => {
-							console.log(item);
 							return (
 								<>
 									<RecipeCard
@@ -55,7 +55,7 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 }
 
 export const getStaticProps: GetStaticProps = async (slug) => {
-	const recipes = await CTFLData.getPages("/home");
+	const recipes = await CTFLData.getAllRecipes();
 
 	return {
 		props: {

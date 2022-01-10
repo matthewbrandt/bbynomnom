@@ -15,21 +15,25 @@ import RecipeDetail from "../../components/RecipeDetail";
 import styles from "../../styles/Index.module.css";
 import {ParsedUrlQuery} from "querystring";
 
-export default function Recipe({ recipe = null }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Recipe({ recipe, slug }: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
+	
+	console.log(slug, recipe);
+
 	if(!router.isFallback && !recipe?.slug) {
 		return <ErrorPage statusCode={404} />
 	}
+	
 	return (
 		<>
 			<Head>
-				<title>cookEat.ch</title>
+				<title>Cook Eat Rezepte | {recipe.title}</title>
 			</Head>
 			<div className={styles.layout}>
 				<Header
 					isDetailpage={true}
 					isFullWidth={false}
-					coverImage={recipe.coverImage} />
+					image={recipe.image} />
 				<main className={styles.main}>
 					<RecipeDetail
 						title={recipe.title}
@@ -55,25 +59,28 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>) => {
-	const { page } = context.params! as IParams;
-	const recipes = await CTFLData.getPages(`${page}`);
+	const { slug } = context.params! as IParams;
+	const recipes = await CTFLData.getPages(`${slug}`);
+	let recipe = recipes.map((item: any) => {
+        return item;
+    })
 
 	return {
 		props: {
-			recipes, page
+			recipe, slug
 		},
 		revalidate: 1,
 	};
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const recipes = await CTFLData.getPages("");
+	const recipes = await CTFLData.getPages('');
 
 	return {
 		paths: recipes.map((recipe: { slug: any; }) => {
 			return {
 				params: {
-					slug: recipe.slug,
+					slug: recipe.slug
 				},
 			}
 		}),

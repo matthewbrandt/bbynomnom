@@ -6,10 +6,12 @@ import React from "react";
 type Header = {
 	isDetailpage: boolean;
 	isFullWidth: boolean;
-	coverImage: string;
+	image: {
+		url: string
+	};
 }
 
-export default function Header({isDetailpage, isFullWidth, coverImage}: Header) {
+export default function Header({isDetailpage, isFullWidth, image}: Header) {
 	// @ts-ignore
 	// eslint-disable-next-line react/display-name
 	const CloseButtonInner = React.forwardRef(({ onClick, href }, ref) => {
@@ -43,7 +45,7 @@ export default function Header({isDetailpage, isFullWidth, coverImage}: Header) 
 				{isFullWidth ?
 					<header className={styles.header__detailPageFullWidth}>
 						<div className={styles.header__detailPageImageFullWidth}>
-							<Image src={coverImage} layout="fill" alt={""}/>
+							<Image src={image.url} layout="fill" alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
 						<Link href="/" passHref>
@@ -53,7 +55,7 @@ export default function Header({isDetailpage, isFullWidth, coverImage}: Header) 
 					:
 					<header className={styles.header__detailPage}>
 						<div className={styles.header__detailPageImage}>
-							<Image src={coverImage} layout="fill" alt={""}/>
+							<Image src={image.url} layout="fill" alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
 						<Link href="/" passHref>

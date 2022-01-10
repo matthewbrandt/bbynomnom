@@ -22,8 +22,8 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 					isFullWidth={false}
 					coverImage={""} />
 				<Search/>
-				<main className={styles.main} key={recipe.slug}>
-					<div className={styles.recipeCard}>
+				<main className={styles.main}>
+					<div className={styles.recipeCard} key={recipe.slug}>
 						{recipe.map((item: any, index: number) => {
 							console.log(item);
 							return (

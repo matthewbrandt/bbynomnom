@@ -34,7 +34,6 @@ export default class CTFLData {
 					}
 				} 
 			}`;
-		console.log(query);
 		const content = await CTFLData.callApi(query);
 		return content.recipeCollection.items;
 	}

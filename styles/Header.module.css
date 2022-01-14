@@ -4,36 +4,51 @@
 	max-width: 1440px;
 	height: 385px;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	position: relative;
 }
 
 .header__logo {
 	background: url("../public/assets/cookeat-logo.svg");
 	background-size: cover;
-	width: 120px;
+	min-width: 120px;
 	height: 86px;
 	justify-self: flex-start;
 	align-self: flex-start;
 	margin: 48px 60px;
+	position: absolute;
+	left: 0;
 }
 
 .header__title {
 	max-width: 863px;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	padding: 0 1rem;
 }
 
 .header__title h1 {
+	margin-top: 4rem;
 	color: var(--white);
 }
 
 .header__title p {
 	color: var(--white);
-	font-size: clamp(1rem, 1vw, 3rem);
+	font-size: clamp(1.5rem, 1vw, 3rem);
+	line-height: 1.5;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.header__spacer {
+	min-width: 120px;
+	height: 86px;
+	justify-self: flex-start;
+	align-self: flex-start;
+	margin: 48px 60px;
 }
 
 .header__detailPage {

@@ -33,6 +33,7 @@ export default function Header({isDetailpage, isFullWidth, image}: Header) {
 						<h1>Rezepte</h1>
 						<p>All die tollen Rezepte der Cook Eat Essen zum selber kochen und auf dem Marktplatz anbieten.</p>
 					</div>
+					<div className={styles.header__spacer}/>
 				</header>
 			</>
 			)

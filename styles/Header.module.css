@@ -43,14 +43,6 @@
 	margin-top: 2rem;
 }
 
-.header__spacer {
-	min-width: 120px;
-	height: 86px;
-	justify-self: flex-start;
-	align-self: flex-start;
-	margin: 48px 60px;
-}
-
 .header__detailPage {
 	max-width: 1440px;
 	margin: 0 auto;

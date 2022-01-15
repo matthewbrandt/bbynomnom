@@ -44,7 +44,7 @@ export default function Header({isDetailpage, isFullWidth, image}: Header) {
 				{isFullWidth ?
 					<header className={styles.header__detailPageFullWidth}>
 						<div className={styles.header__detailPageImageFullWidth}>
-							<Image src={image.url} layout="fill" alt={""}/>
+							<Image src={image.url} layout="fill" objectFit={'cover'} alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
 						<Link href="/" passHref>
@@ -54,7 +54,7 @@ export default function Header({isDetailpage, isFullWidth, image}: Header) {
 					:
 					<header className={styles.header__detailPage}>
 						<div className={styles.header__detailPageImage}>
-							<Image src={image.url} layout="fill" alt={""}/>
+							<Image src={image.url} layout="fill" objectFit={'cover'} alt={""}/>
 						</div>
 						<div className={styles.header__detailPageLogo}/>
 						<Link href="/" passHref>

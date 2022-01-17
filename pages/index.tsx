@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
 import RecipeCard from "../components/RecipeCard";
+import RecipeSubmit from "../components/RecipeSubmit";
 import styles from "../styles/Index.module.css";
 
 export default function Index({ recipes }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -15,7 +16,6 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 		<>
 			<Head>
 				<title>Cook Eat Rezepte</title>
-
 			</Head>
 			<div className={styles.layout}>
 				<Header
@@ -46,6 +46,7 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 						})}
 					</div>
 				</main>
+				<RecipeSubmit />
 				<Footer
 					isDetailpage={false}
 					isFullWidth={false} />

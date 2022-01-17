@@ -1,0 +1,13 @@
+.recipeSubmit__grid {
+    grid-area: prefooter;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 69px;
+}
+
+.recipeSubmit__spacing {
+    padding-bottom: 24px;
+}

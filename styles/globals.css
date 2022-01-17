@@ -47,7 +47,7 @@ h1 {
 
 .headline {
 	font-family: "Ubuntu", sans-serif;
-	color: var(--black);
+	color: var(--grey);
 }
 
 h1,
@@ -81,13 +81,14 @@ h3,
 	height: auto;
 	padding: 0.87rem 1.12rem;
 	font-weight: 700;
-	font-size: 1.12rem;
+	font-size: 1.05rem;
 	line-height: 1.5rem;
 	text-align: center;
 	border: none;
 	border-radius: 4px;
 	text-decoration: none;
 	text-transform: uppercase;
+	letter-spacing: 0.06rem;
 }
 
 .btn--orange {
@@ -95,9 +96,17 @@ h3,
 	color: var(--white);
 }
 
+.btn--orange:hover {
+	color: var(--grey);
+}
+
 .btn--green {
 	background: var(--green);
 	color: var(--white);
+}
+
+.btn--green:hover {
+	color: var(--grey);
 }
 
 .btn--ghost {

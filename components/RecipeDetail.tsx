@@ -30,16 +30,16 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 				<h1 className="headline headline--h2">{title}</h1>
 				{imageCreditUrl ?
 					<p className={styles.recipeDetail__imageCredit}>
-						<strong>Fotonachweis: </strong>
+						<span>Fotonachweis: </span>
 						<Link href={imageCreditUrl}>
-							<a>{imageCreditName}</a>
+							<a target="_blank">{imageCreditName}</a>
 						</Link>
 					</p>
 					: '' }
 
 				{tags ?
 					<div className={styles.recipeDetail__tags}>
-						<strong>Tags:</strong>
+						<span>Tags: </span>
 						<ul className={styles.recipeDetail__tagsList}>
 							{tags.map((tag, index) => {
 								return <li key={index} className={styles.recipeDetail__tagsListItem}>{tag}</li>

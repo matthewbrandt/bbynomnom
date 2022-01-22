@@ -21,8 +21,10 @@ export default function Index({ recipes }: InferGetStaticPropsType<typeof getSta
 				<Header
 					isDetailpage={false}
 					isFullWidth={true}
-					image={""}/>
-				<Search/>
+					image={""} />
+				<Search
+					recipe={recipe}
+				/>
 				<main className={styles.main} key={recipes.slug}>
 					<div className={styles.recipeCard}>
 						{recipe.map((item: any, index: number) => {

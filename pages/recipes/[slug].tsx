@@ -48,7 +48,7 @@ export default function Recipe({ recipes }: InferGetStaticPropsType<typeof getSt
 								date={item.date}
 								imageCreditUrl={item.imageCreditUrl}
 								imageCreditName={item.imageCreditName}
-								tags={item.tags}
+								tags={item.tagsCollection}
 								persons={item.persons}
 								ingredients={item.ingredients}
 								directions={item.directions} />

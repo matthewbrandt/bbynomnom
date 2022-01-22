@@ -32,7 +32,7 @@ export default function RecipeCard({ title, image,tags, slug }: RecipeCard) {
 
 	return (
 		<>
-		<section className={styles.recipeCard} data-tags={tags} data-title={title}>
+		<section className={styles.recipeCard}>
 			<Link as={`/recipes/${slug}`} href="/recipes/[slug]" passHref>
 				<RecipeCardInner />
 			</Link>

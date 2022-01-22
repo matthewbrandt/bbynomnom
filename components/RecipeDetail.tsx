@@ -24,6 +24,10 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 		})
 	};
 
+	// @ts-ignore
+	const tagsList = tags.items.map((item) => {
+		return item;
+	});
 	return (
 		<>
 			<div className={styles.recipeDetail__title}>
@@ -37,16 +41,18 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 					</p>
 					: '' }
 
-				{tags ?
 					<div className={styles.recipeDetail__tags}>
 						<span>Tags: </span>
 						<ul className={styles.recipeDetail__tagsList}>
-							{tags.map((tag, index) => {
-								return <li key={index} className={styles.recipeDetail__tagsListItem}>{tag}</li>
+							{tagsList.map((item: any, index: number) => {
+								return (
+									<>
+										<li key={index} className={styles.recipeDetail__tagsListItem}>{item.tag}</li>
+									</>
+								)
 							})}
 						</ul>
 					</div>
-					: ''}
 			</div>
 
 			<div className={styles.recipeDetail__recipe}>

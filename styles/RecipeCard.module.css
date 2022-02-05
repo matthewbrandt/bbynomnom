@@ -28,10 +28,6 @@
 	}
 }
 
-.recipeCard__image span {
-	border-radius: 8px;
-}
-
 .recipeCard__title {
 	font-size: 1.125rem;
 	color: var(--grey);

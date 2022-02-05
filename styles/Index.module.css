@@ -14,9 +14,3 @@
 	flex-flow: row wrap;
 	justify-content: center;
 }
-
-@media only screen and (min-width: 1440px) {
-	.recipeCard {
-		justify-content: flex-start;
-	}
-}

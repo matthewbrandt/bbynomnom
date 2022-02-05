@@ -10,7 +10,10 @@ import styles from "../styles/Index.module.css";
 
 export default function Index({ recipes }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-	const recipe = recipes.map((item: any) => { return item; })
+	//todo: make the recipes sorted by title, descending (A-Z)
+	const recipe = recipes.map((item: any) => { 
+		return item; 
+	})
 
 	return (
 		<>

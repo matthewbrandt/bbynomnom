@@ -15,32 +15,43 @@
 	background-size: cover;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
-}
-
-.footer__preLeft {
-	max-width: 645px;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
-	margin-left: 141px;
+	padding: 5rem;
 }
 
-.footer__preLeft p {
+@media only screen and (max-width: 600px) {
+	.footer__pre {
+		padding: 1rem;
+	}
+}
+
+.footer__pre p {
 	color: var(--white);
 }
 
-.footer__preLeftHeader {
+.footer__preHeader {
 	font-family: "Debby", sans-serif;
 	color: var(--white);
 	font-size: 5rem;
 }
 
-.footer__preLeftText {
+.footer__preText {
 	font-size: 1.5rem;
 	line-height: 2.25rem;
 	margin-bottom: 28px;
+}
+
+@media only screen and (max-width: 600px) {
+	.footer__preHeader {
+		font-size: 3.5rem;
+	}
+
+	.footer__preText {
+		font-size: 1rem;
+		line-height: 1.5;
+		margin-bottom: 28px;
+	}
 }
 
 .footer__preRight {
@@ -53,9 +64,54 @@
 	margin: 28px 60px;
 }
 
+@media only screen and (max-width: 390px) {
+	.footer__pre {
+		position: relative;
+	}
+
+	.footer__preRight {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+	}
+}
+
+@media only screen and (min-width: 390px) {
+	.footer__pre {
+		position: relative;
+	}
+
+	.footer__preRight {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 2rem 0.5rem;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.footer__pre {
+		position: relative;
+	}
+
+	.footer__preRight {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 2rem;
+	}
+}
+
 .footer__legal {
 	background: var(--brownish-grey);
 	padding: 10px 60px;
+}
+
+@media only screen and (max-width: 600px) {
+		.footer__legal {
+			padding: 0.5rem 1rem;
+		}
 }
 
 .footer__legal p {

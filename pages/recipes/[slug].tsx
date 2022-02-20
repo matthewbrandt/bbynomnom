@@ -51,7 +51,8 @@ export default function Recipe({ recipes }: InferGetStaticPropsType<typeof getSt
 								tags={item.tagsCollection}
 								persons={item.persons}
 								ingredients={item.ingredients}
-								directions={item.directions} />
+								directions={item.directions}
+								description={item.description} />
 							</>
 						)
 					})}

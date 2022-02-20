@@ -31,7 +31,7 @@ export default function Footer({isDetailpage, isFullWidth}: Footer) {
 				{isFullWidth ?
 					<footer className={styles.footer__fullWidth}>
 						<div className={styles.footer__detailPage}>
-							<a href="https://www.cookeat.ch" className="btn btn--green">Auf CookEat anbieten</a>
+							<a href="https://www.cookeat.ch" className="btn btn--green">Auf Cook Eat anbieten</a>
 							<Link href="/">
 								<a className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
 							</Link>
@@ -43,7 +43,7 @@ export default function Footer({isDetailpage, isFullWidth}: Footer) {
 					:
 					<footer className={styles.footer}>
 						<div className={styles.footer__detailPage}>
-							<a href="https://www.cookeat.ch" className="btn btn--green">Auf CookEat anbieten</a>
+							<a href="https://www.cookeat.ch" className="btn btn--green">Essen Anbieten</a>
 							<Link href="/">
 								<a className={styles.footer__detailPageLink}>Zurück zur Rezeptliste</a>
 							</Link>

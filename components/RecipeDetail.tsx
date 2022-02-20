@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/RecipeDetail.module.css";
+import ReactMarkdownWithHtml from "react-markdown";
 
 type RecipeDetail = {
 	title: string;
@@ -12,8 +13,9 @@ type RecipeDetail = {
 	persons: number;
 	ingredients: [];
 	directions: [];
+	description: Document;
 }
-export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imageCreditName, tags, persons, ingredients, directions}: RecipeDetail) {
+export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imageCreditName, tags, persons, ingredients, directions, description}: RecipeDetail) {
 	let formRef: any = React.useRef();
 	const scrollPastChecked = (event: any) => {
 		if(!event.current) return;
@@ -28,6 +30,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 	const tagsList = tags.items.map((item) => {
 		return item;
 	});
+
 	return (
 		<>
 			<div className={styles.recipeDetail__title}>
@@ -80,7 +83,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 								let formId: string = `direction-${index}`;
 								return (
 									<li key={index} className={styles.recipeDetail__directionsItem}>
-										<input type="checkbox" id={formId} onClick={scrollPastChecked}/>
+										{/* remove checkbox temporarily before final design review <input type="checkbox" id={formId} onClick={scrollPastChecked}/> */}
 										<label htmlFor={formId} ref={formRef}>{direction}</label>
 									</li>
 								)
@@ -88,6 +91,9 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 						</ul>
 						: ''}
 				</div>
+			</div>
+			<div className={styles.recipeDetail__description}>
+				<ReactMarkdownWithHtml allowDangerousHtml>{description}</ReactMarkdownWithHtml>
 			</div>
 		</>
 	)

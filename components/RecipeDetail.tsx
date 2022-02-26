@@ -34,7 +34,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 	return (
 		<>
 			<div className={styles.recipeDetail__title}>
-				<h1 className="headline headline--h2">{title}</h1>
+				<h1 className="headline headline--h2" itemProp="name">{title}</h1>
 				{imageCreditUrl ?
 					<p className={styles.recipeDetail__imageCredit}>
 						<span>Fotonachweis: </span>
@@ -66,7 +66,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 							{ingredients.map((ingredient, index) => {
 								let formId: string = `ingredient-${index}`;
 								return (
-									<li key={index} className={styles.recipeDetail__ingredientsItem}>
+									<li key={index} className={styles.recipeDetail__ingredientsItem} itemProp="recipeIngredient">
 										<input type="checkbox" id={formId} onClick={scrollPastChecked}/>
 										<label htmlFor={formId} ref={formRef}>{ingredient}</label>
 									</li>
@@ -82,7 +82,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 							{directions.map((direction, index) => {
 								let formId: string = `direction-${index}`;
 								return (
-									<li key={index} className={styles.recipeDetail__directionsItem}>
+									<li key={index} className={styles.recipeDetail__directionsItem} itemProp="recipeInstructions">
 										{/* remove checkbox temporarily before final design review <input type="checkbox" id={formId} onClick={scrollPastChecked}/> */}
 										<label htmlFor={formId} ref={formRef}>{direction}</label>
 									</li>
@@ -93,7 +93,7 @@ export default function RecipeDetail({title, excerpt, date, imageCreditUrl, imag
 				</div>
 			</div>
 			<div className={styles.recipeDetail__description}>
-				<ReactMarkdownWithHtml allowDangerousHtml>{description}</ReactMarkdownWithHtml>
+				<ReactMarkdownWithHtml allowDangerousHtml itemProp="description">{description}</ReactMarkdownWithHtml>
 			</div>
 		</>
 	)

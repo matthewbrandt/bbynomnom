@@ -38,7 +38,7 @@ export default function Recipe({ recipes }: InferGetStaticPropsType<typeof getSt
 						</>
 					)
 				})}
-				<main className={styles.main}>
+				<main className={styles.main} itemScope itemType="https://schema.org/Recipe">
 					{recipes.map((item: any) => {
 						return (
 							<>

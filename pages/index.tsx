@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Head from "next/head";
 import CTFLData from "../lib/api";
 import {GetStaticPaths, GetStaticPathsContext, GetStaticProps, InferGetStaticPropsType} from "next";

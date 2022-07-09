@@ -25,7 +25,7 @@ export default function Recipe({ recipes }: InferGetStaticPropsType<typeof getSt
 	return (
 		<>
 			<Head>
-				<title>Cook Eat Rezepte | {recipe.title}</title>
+				<title>Cook Eat Rezepte | {recipe[0].title}</title>
 			</Head>
 			<div className={styles.layout}>
 				{recipe.map((item: any) => {
